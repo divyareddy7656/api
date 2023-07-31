@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Customer Management</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(255, 0, 0);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .order-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color:#4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Enterprise Customer Management</h1>
+
+    <div class="container">
+        <!-- Add Customer Form -->
+        <div class="order-card">
+            <h2>Add Customer:</h2>
+            <div class="form-container">
+                <label for="customerId">Customer ID:</label>
+                <input type="text" id="customerId" required>
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" required><br><br>
+                <button type="button" onclick="addCustomer()">Add Customer</button>
+            </div>
+        </div>
+
+        <!-- Update Customer Form -->
+        <div class="order-card">
+            <h2>Update Customer:</h2>
+            <div class="form-container">
+                <label for="updateCustomerId">Customer ID:</label>
+                <input type="text" id="updateCustomerId" required>
+                <label for="updateCompanyName">Company Name:</label>
+                <input type="text" id="updateCompanyName" required><br><br>
+                <button type="button" onclick="updateCustomer()">Update Customer</button>
+            </div>
+        </div>
+
+        <!-- Get Customer By ID Form -->
+        <div class="order-card">
+            <h2>Get Customer By ID:</h2>
+            <div class="form-container">
+                <label for="getCustomerId">Customer ID:</label>
+                <input type="text" id="getCustomerId" required><br><br>
+                <button type="button" onclick="getCustomerById()">Get Customer</button>
+            </div>
+        </div>
+
+        <!-- Get All Customers Button -->
+        <div class="order-card">
+            <h2>Get All Customers:</h2>
+            <button type="button" onclick="getAllCustomers()">Get All Customers</button>
+        </div>
+    </div>
+
+    <!-- Customer List Table -->
+    <div class="order-card">
+        <h2>Customer List:</h2>
+        <table id="customerList">
+            <thead>
+                <tr>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Company Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Customer data will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Add your JavaScript code here...
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .service-card {
+            max-width: 400px;
+            margin: 10px auto;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1E656D;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Center the heading */
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1E656D;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #orderList {
+            width: 100%;
+        }
+
+        /* Set the width of each table */
+        #provisionServiceForm table,
+        #testQoSForm table,
+        #disableServiceForm table,
+        #holdServiceForm table,
+        #resumeServiceForm table {
+            width: 100%; /* You can adjust the width here as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Service Management</h1>
+
+    <!-- Provision Service -->
+    <div class="service-card" id="provisionServiceForm">
+        <h2>Provision Service:</h2>
+        <label for="serviceName">Service Name:</label>
+        <input type="text" id="serviceName" required>
+        <label for="connectionId">Connection ID:</label>
+        <input type="text" id="connectionId" required><br><br>
+        <button type="button" onclick="provisionService()">Provision Service</button>
+        <div class="message" id="provisionMessage"></div>
+    </div>
+
+    <!-- Test QoS -->
+    <div class="service-card" id="testQoSForm">
+        <h2>Test QoS:</h2>
+        <label for="testConnectionId">Connection ID:</label>
+        <input type="text" id="testConnectionId" required><br><br>
+        <button type="button" onclick="testQoS()">Test QoS</button>
+        <div class="message" id="testQoSMessage"></div>
+    </div>
+
+    <!-- Disable Service -->
+    <div class="service-card" id="disableServiceForm">
+        <h2>Disable Service:</h2>
+        <label for="disableConnectionId">Connection ID:</label>
+        <input type="text" id="disableConnectionId" required><br><br>
+        <button type="button" onclick="disableService()">Disable Service</button>
+        <div class="message" id="disableMessage"></div>
+    </div>
+
+    <!-- Hold Service -->
+    <div class="service-card" id="holdServiceForm">
+        <h2>Hold Service:</h2>
+        <label for="holdConnectionId">Connection ID:</label>
+        <input type="text" id="holdConnectionId" required><br><br>
+        <button type="button" onclick="holdService()">Hold Service</button>
+        <div class="message" id="holdMessage"></div>
+    </div>
+
+    <!-- Resume Service -->
+    <div class="service-card" id="

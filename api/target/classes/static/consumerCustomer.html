@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .order-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Customer Order Management</h1>
+
+    <div class="container">
+        <!-- Create Order Form -->
+        <div class="order-card">
+            <h2>Create Order:</h2>
+            <div class="form-container">
+                <label for="customerId">Customer ID:</label>
+                <input type="text" id="customerId" required>
+                <label for="orderId">Order ID:</label>
+                <input type="text" id="orderId" required>
+                <label for="status">Status:</label>
+                <input type="text" id="status" required><br><br>
+                <button type="button" onclick="createOrder()">Create Order</button>
+            </div>
+        </div>
+
+        <!-- Update Order Form -->
+        <div class="order-card">
+            <h2>Update Order:</h2>
+            <div class="form-container">
+                <label for="updateCustomerId">Customer ID:</label>
+                <input type="text" id="updateCustomerId" required>
+                <label for="updateOrderId">Order ID:</label>
+                <input type="text" id="updateOrderId" required>
+                <label for="updateStatus">Status:</label>
+                <input type="text" id="updateStatus" required><br><br>
+                <button type="button" onclick="updateOrder()">Update Order</button>
+            </div>
+        </div>
+
+        <!-- Get Orders By Customer ID Form -->
+        <div class="order-card">
+            <h2>Get Orders By Customer ID:</h2>
+            <div class="form-container">
+                <label for="getCustomerId">Customer ID:</label>
+                <input type="text" id="getCustomerId" required><br><br>
+                <button type="button" onclick="getOrdersByCustomerId()">Get Orders</button>
+            </div>
+        </div>
+
+        <!-- Get Order By ID Form -->
+        <div class="order-card">
+            <h2>Get Order By ID:</h2>
+            <div class="form-container">
+                <label for="getCustomerId">Customer ID:</label>
+                <input type="text" id="getOrderCustomerId" required>
+                <label for="getOrderId">Order ID:</label>
+                <input type="text" id="getOrderId" required><br><br>
+                <button type="button" onclick="getOrderById()">Get Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order List Table -->
+    <div class="order-card">
+        <h2>Order List:</h2>
+        <table id="orderList">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer ID</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Orders will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // ... (existing JavaScript code here) ...
+    </script>
+</body>
+
+</html>
